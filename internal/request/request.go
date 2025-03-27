@@ -104,7 +104,6 @@ func (r *Request) parseSingle(data []byte) (int, error) {
 		r.state = requestStateParsingHeaders
 		return n, nil
 	case requestStateParsingHeaders:
-		fmt.Println("Parsing headers")
 		numBytesParsed, done, err := r.Headers.Parse(data)
 		if err != nil {
 			return 0, err
